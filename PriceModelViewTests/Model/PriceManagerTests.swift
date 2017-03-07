@@ -10,10 +10,11 @@ import XCTest
 @testable import PriceModelView
 
 class PriceManagerTests: XCTestCase {
+    var sut: PriceManager!
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = PriceManager()
     }
     
     override func tearDown() {
@@ -22,17 +23,21 @@ class PriceManagerTests: XCTestCase {
     }
     
     func test_Init_countOfItems_equalZero() {
-        let sut = PriceManager()
-        
         XCTAssertEqual(sut.itemsCount, 0)
     }
     
     func test_addItem_increaseItemsCount() {
-        let sut = PriceManager()
         let priceItem = PriceItem(countCrowns: 3)
         sut.add(priceItem)
         
         XCTAssertEqual(sut.itemsCount, 1)
+    }
+    
+    func test_itemFor_retursItem() {
+        let priceItem = PriceItem(countCrowns: 3)
+        sut.add(priceItem)
+        
+        XCTAssertEqual(priceItem, sut.itemFor(index: 0))
     }
     
 }

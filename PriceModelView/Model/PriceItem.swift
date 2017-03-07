@@ -44,3 +44,17 @@ struct PriceItem {
         return "\(countCrowns) " + suffix
     }
 }
+
+extension PriceItem: Equatable {
+    static func ==(lhs: PriceItem, rhs: PriceItem) -> Bool {
+        guard lhs.countCrowns == rhs.countCrowns else {
+            return false
+        }
+        
+        guard lhs.priceForOneCrown == rhs.priceForOneCrown else {
+            return false
+        }
+        
+        return true
+    }
+}

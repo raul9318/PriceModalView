@@ -17,4 +17,8 @@ class PriceManager {
     func add(_ item: PriceItem) {
         items.append(item)
     }
+    
+    func itemFor(index: Int) -> PriceItem {
+        return items[index]
+    }
 }

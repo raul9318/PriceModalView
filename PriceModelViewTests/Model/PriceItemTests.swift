@@ -45,5 +45,4 @@ class PriceItemTests: XCTestCase {
         XCTAssertEqual(priceItem.title, "5 Корон")
     }
     
-    
 }
