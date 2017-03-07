@@ -21,7 +21,7 @@ class PriceCellTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_hasCrownImage() {
+    func test_hasAllLabels() {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PriceViewController") as! PriceViewController
         
         _ = vc.view
@@ -45,4 +45,6 @@ class PriceCellTests: XCTestCase {
         XCTAssertNotNil(cell.priceForAllLabel)
         XCTAssertNotNil(cell.buyButton)
     }
+    
+    
 }

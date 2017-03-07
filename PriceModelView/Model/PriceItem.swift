@@ -10,18 +10,18 @@ import Foundation
 
 struct PriceItem {
     let countCrowns: Int
-    var priceForOneCrown: Double
+    var priceForOneCrown: Int
     var bestPrice: Bool
     
-    var priceForAllCrown: Double {
-        return priceForOneCrown * Double(countCrowns)
+    var priceForAllCrown: Int {
+        return priceForOneCrown * countCrowns
     }
     
     var title: String {
         return compTitle()
     }
     
-    init(countCrowns: Int, priceForOneCrown: Double = 0, bestPrice: Bool = false) {
+    init(countCrowns: Int, priceForOneCrown: Int = 0, bestPrice: Bool = false) {
         self.countCrowns = countCrowns
         self.priceForOneCrown = priceForOneCrown
         self.bestPrice = bestPrice

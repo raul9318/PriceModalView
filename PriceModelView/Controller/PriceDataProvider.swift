@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class PriceDataProvider: NSObject, UITableViewDataSource {
     var priceManager: PriceManager!
     
@@ -21,15 +22,26 @@ class PriceDataProvider: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath) as! PriceCell
         
-        //let priceItem = priceManager.itemFor(index: indexPath.row)
-        //cell.configCell(with: priceItem)
+        let cell: PriceCell
+        
+        let priceItem = priceManager.itemFor(index: indexPath.row)
+        if priceItem.bestPrice {
+            cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath) as! PriceCell
+            cell.configCell(with: priceItem)
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath) as! PriceCell
+            cell.configCell(with: priceItem)
+        }
         
         return cell
     }
 }
 
 extension PriceDataProvider: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     
 }
