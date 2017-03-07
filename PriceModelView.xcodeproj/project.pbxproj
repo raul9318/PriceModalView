@@ -13,6 +13,8 @@
 		6178AF681E6E9AD6002597C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178AF661E6E9AD6002597C1 /* LaunchScreen.storyboard */; };
 		61C7C2751E6EAAB0005E86EA /* PriceItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C2741E6EAAB0005E86EA /* PriceItemTests.swift */; };
 		61C7C2771E6EAACB005E86EA /* PriceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C2761E6EAACB005E86EA /* PriceItem.swift */; };
+		61C7C2791E6EBC11005E86EA /* PriceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C2781E6EBC11005E86EA /* PriceManagerTests.swift */; };
+		61C7C27B1E6EBC60005E86EA /* PriceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C27A1E6EBC60005E86EA /* PriceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		6178AF741E6E9AD6002597C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61C7C2741E6EAAB0005E86EA /* PriceItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceItemTests.swift; path = Model/PriceItemTests.swift; sourceTree = "<group>"; };
 		61C7C2761E6EAACB005E86EA /* PriceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceItem.swift; path = Model/PriceItem.swift; sourceTree = "<group>"; };
+		61C7C2781E6EBC11005E86EA /* PriceManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceManagerTests.swift; path = Model/PriceManagerTests.swift; sourceTree = "<group>"; };
+		61C7C27A1E6EBC60005E86EA /* PriceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceManager.swift; path = Model/PriceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 				6178AF7D1E6E9C36002597C1 /* Supporting files */,
 				6178AF611E6E9AD6002597C1 /* Main.storyboard */,
 				61C7C2761E6EAACB005E86EA /* PriceItem.swift */,
+				61C7C27A1E6EBC60005E86EA /* PriceManager.swift */,
 			);
 			path = PriceModelView;
 			sourceTree = "<group>";
@@ -89,6 +94,7 @@
 			children = (
 				6178AF741E6E9AD6002597C1 /* Info.plist */,
 				61C7C2741E6EAAB0005E86EA /* PriceItemTests.swift */,
+				61C7C2781E6EBC11005E86EA /* PriceManagerTests.swift */,
 			);
 			path = PriceModelViewTests;
 			sourceTree = "<group>";
@@ -208,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C7C27B1E6EBC60005E86EA /* PriceManager.swift in Sources */,
 				61C7C2771E6EAACB005E86EA /* PriceItem.swift in Sources */,
 				6178AF5E1E6E9AD6002597C1 /* AppDelegate.swift in Sources */,
 			);
@@ -218,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61C7C2751E6EAAB0005E86EA /* PriceItemTests.swift in Sources */,
+				61C7C2791E6EBC11005E86EA /* PriceManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
