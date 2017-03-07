@@ -20,6 +20,8 @@
 		61C7C2831E6EC787005E86EA /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C2821E6EC787005E86EA /* PriceCell.swift */; };
 		61C7C2851E6EC7BA005E86EA /* PriceCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C2841E6EC7BA005E86EA /* PriceCellTests.swift */; };
 		61C7C28B1E6EFB2D005E86EA /* PriceBuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C28A1E6EFB2D005E86EA /* PriceBuyButton.swift */; };
+		61C7C28F1E6F0129005E86EA /* ModalPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C28E1E6F0129005E86EA /* ModalPresentAnimationController.swift */; };
+		61C7C2911E6F0398005E86EA /* ModalShowAnimationTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C2901E6F0398005E86EA /* ModalShowAnimationTransitioningDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		61C7C2821E6EC787005E86EA /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceCell.swift; path = Controller/PriceCell.swift; sourceTree = "<group>"; };
 		61C7C2841E6EC7BA005E86EA /* PriceCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceCellTests.swift; path = Controller/PriceCellTests.swift; sourceTree = "<group>"; };
 		61C7C28A1E6EFB2D005E86EA /* PriceBuyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceBuyButton.swift; sourceTree = "<group>"; };
+		61C7C28E1E6F0129005E86EA /* ModalPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModalPresentAnimationController.swift; path = Controller/ModalPresentAnimationController.swift; sourceTree = "<group>"; };
+		61C7C2901E6F0398005E86EA /* ModalShowAnimationTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModalShowAnimationTransitioningDelegate.swift; path = Controller/ModalShowAnimationTransitioningDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				61C7C2801E6EBED3005E86EA /* PriceDataProvider.swift */,
 				61C7C2821E6EC787005E86EA /* PriceCell.swift */,
 				61C7C28A1E6EFB2D005E86EA /* PriceBuyButton.swift */,
+				61C7C28E1E6F0129005E86EA /* ModalPresentAnimationController.swift */,
+				61C7C2901E6F0398005E86EA /* ModalShowAnimationTransitioningDelegate.swift */,
 			);
 			path = PriceModelView;
 			sourceTree = "<group>";
@@ -247,6 +253,8 @@
 			files = (
 				61C7C28B1E6EFB2D005E86EA /* PriceBuyButton.swift in Sources */,
 				61C7C27B1E6EBC60005E86EA /* PriceManager.swift in Sources */,
+				61C7C2911E6F0398005E86EA /* ModalShowAnimationTransitioningDelegate.swift in Sources */,
+				61C7C28F1E6F0129005E86EA /* ModalPresentAnimationController.swift in Sources */,
 				61C7C2831E6EC787005E86EA /* PriceCell.swift in Sources */,
 				61C7C2811E6EBED3005E86EA /* PriceDataProvider.swift in Sources */,
 				61C7C2771E6EAACB005E86EA /* PriceItem.swift in Sources */,

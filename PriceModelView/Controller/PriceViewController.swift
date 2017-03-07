@@ -18,6 +18,8 @@ class PriceViewController: UIViewController {
             self.priceDataPrivider?.priceManager = priceManager
         }
     }
+    
+    let modalShowAnimationTransitioningDelegate = ModalShowAnimationTransitioningDelegate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,13 @@ class PriceViewController: UIViewController {
 
         tableView.dataSource = priceDataPrivider
         tableView.delegate = priceDataPrivider
+        
+        transitioningDelegate = modalShowAnimationTransitioningDelegate
     }
+    
+    @IBAction func dismissAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }
