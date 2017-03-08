@@ -8,12 +8,15 @@
 
 import UIKit
 
+struct ModalViewParams {
+    static let marginTop: CGFloat = 76
+    static let marginLeft: CGFloat = 12
+}
+
 class ModalPresentAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-    private let marginTop: CGFloat = 76
-    private let marginLeft: CGFloat = 12
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.3
+        return 0.4
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -37,16 +40,16 @@ class ModalPresentAnimationController: NSObject, UIViewControllerAnimatedTransit
         
         // add to vc view
         var finalFrame = transitionContext.finalFrame(for: toVC)
-        finalFrame = CGRect(x: 0, y: 0, width: finalFrame.width - marginLeft * 2, height: finalFrame.height - marginTop - marginLeft)
-        finalFrame = finalFrame.offsetBy(dx: marginLeft, dy: marginTop)
+        finalFrame = CGRect(x: 0, y: 0, width: finalFrame.width - ModalViewParams.marginLeft * 2, height: finalFrame.height - ModalViewParams.marginTop - ModalViewParams.marginLeft)
+        finalFrame = finalFrame.offsetBy(dx: ModalViewParams.marginLeft, dy: ModalViewParams.marginTop)
         
         let bounds = UIScreen.main.bounds
-        toVC.view.frame = bounds.offsetBy(dx: 0, dy: bounds.height)
+        toVC.view.frame = bounds.offsetBy(dx: ModalViewParams.marginLeft, dy: bounds.height)
         toVC.view.layer.cornerRadius = 4
         toVC.view.clipsToBounds = true
         container.addSubview(toVC.view)
         
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
             toVC.view.frame = finalFrame
             blurView.alpha = 1
         }) { (complete) in
