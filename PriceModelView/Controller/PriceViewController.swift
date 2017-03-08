@@ -42,6 +42,4 @@ class PriceViewController: UIViewController {
     @IBAction func dismissAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
-
 }

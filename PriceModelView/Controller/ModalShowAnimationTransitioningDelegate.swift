@@ -12,4 +12,8 @@ class ModalShowAnimationTransitioningDelegate: NSObject, UIViewControllerTransit
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return ModalPresentAnimationController()
     }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return ModalDismissAnimationController()
+    }
 }
