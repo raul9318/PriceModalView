@@ -26,7 +26,8 @@ class PriceDataProvider: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath) as! PriceCell
         let priceItem = priceManager.itemFor(index: indexPath.row)
         
-        cell.configCell(with: priceItem)
+        cell.item = priceItem
+        cell.configCell()
         
         return cell
     }

@@ -25,7 +25,7 @@ class PriceViewController: UIViewController {
         super.viewDidLoad()
         priceManager = PriceManager()
         
-        // For test
+        
         priceManager.add(PriceItem(countCrowns: 1, priceForOneCrown: 159, bestPrice: false))
         priceManager.add(PriceItem(countCrowns: 3, priceForOneCrown: 129, bestPrice: false))
         priceManager.add(PriceItem(countCrowns: 5, priceForOneCrown: 99, bestPrice: true))

@@ -19,10 +19,12 @@ class PriceCell: UITableViewCell {
     private let rubleCharacter: Character = "₽"
     private let bestBackgroundColor = UIColor(red: 47/255, green: 149/255, blue: 1.0, alpha: 1.0)
     
-    private var item: PriceItem!
+    var item: PriceItem?
     
-    func configCell(with item: PriceItem) {
-        self.item = item
+    func configCell() {
+        guard let item = item else {
+            return
+        }
         
         var priceForOneString = "\(item.priceForOneCrown)\(rubleCharacter) / шт"
         if item.bestPrice {
@@ -32,10 +34,21 @@ class PriceCell: UITableViewCell {
         priceForOneLabel.attributedText = priceForOneAttributedString(priceForOneString)
         crownCountLabel.text = String(item.countCrowns)
         titleLabel.text = item.title
-        priceForAllLabel.text = "\(item.priceForAllCrown)\(rubleCharacter)"
+        priceForAllLabel.attributedText =  priceForAllAttributedString("\(item.priceForAllCrown)\(rubleCharacter)")
     }
     
-    func setupBestPrice() {
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        guard let item = item else {
+            return
+        }
+        
+        if item.bestPrice {
+            setupBestPrice()
+        }
+    }
+    
+    private func setupBestPrice() {
         priceForOneLabel.backgroundColor = bestBackgroundColor
         
         priceForOneLabel.textAlignment = .center
@@ -51,29 +64,28 @@ class PriceCell: UITableViewCell {
         priceForOneLabel.layer.masksToBounds = true
     }
     
-    private func priceForOneAttributedString(_ priceForOneString: String) -> NSMutableAttributedString {
-        let priceForOneAttributedString = NSMutableAttributedString(string: priceForOneString, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText-Semibold", size: 13.0)])
+    private func priceForOneAttributedString(_ str: String) -> NSMutableAttributedString {
         
-        priceForOneAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText-Semibold", size: 18.0), range: NSRange.init(location: 0, length: String(item.priceForOneCrown).characters.count))
+        let returnedAttributedString = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText-Semibold", size: 13.0)])
         
-        if item.bestPrice {
+        returnedAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText-Semibold", size: 18.0), range: NSRange.init(location: 0, length: String(item!.priceForOneCrown).characters.count))
+        
+        if item!.bestPrice {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineHeightMultiple = 0.8
             
-            priceForOneAttributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange.init(location: 0, length: priceForOneAttributedString.length))
+            returnedAttributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange.init(location: 0, length: returnedAttributedString.length))
         }
         
-        return priceForOneAttributedString
+        return returnedAttributedString
     }
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        guard let item = item else {
-            return
-        }
-        if item.bestPrice {
-            setupBestPrice()
-        }
+    private func priceForAllAttributedString(_ str: String) -> NSMutableAttributedString {
+        let returnedAttributedString = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText", size: 16.0)])
+        
+        returnedAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText", size: 12.0), range: NSRange.init(location: returnedAttributedString.length - 1, length: 1))
+        
+        return returnedAttributedString
     }
 
 }
