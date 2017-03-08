@@ -73,6 +73,7 @@ class PriceCell: UITableViewCell {
         if item!.bestPrice {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineHeightMultiple = 0.8
+            paragraphStyle.alignment = .center
             
             returnedAttributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange.init(location: 0, length: returnedAttributedString.length))
         }
