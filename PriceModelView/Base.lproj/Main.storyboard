@@ -431,10 +431,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bitmap" width="185" height="242"/>
-        <image name="bigCrown" width="37" height="31"/>
+        <image name="Bitmap" width="371" height="484"/>
+        <image name="bigCrown" width="75" height="63"/>
         <image name="menu" width="22" height="22"/>
-        <image name="priceHeader" width="175" height="64"/>
-        <image name="smallCrown" width="11" height="10"/>
+        <image name="priceHeader" width="351" height="129"/>
+        <image name="smallCrown" width="26" height="24"/>
     </resources>
 </document>
