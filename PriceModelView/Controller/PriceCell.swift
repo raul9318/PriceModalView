@@ -79,9 +79,9 @@ class PriceCell: UITableViewCell {
     
     private func priceForOneAttributedString(_ str: String) -> NSMutableAttributedString {
         
-        let returnedAttributedString = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText-Semibold", size: 13.0)])
+        let returnedAttributedString = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText-Semibold", size: 13.0) ?? UIFont.boldSystemFont(ofSize: 13)])
         
-        returnedAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText-Semibold", size: 18.0), range: NSRange.init(location: 0, length: String(item!.priceForOneCrown).characters.count))
+        returnedAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText-Semibold", size: 18.0) ?? UIFont.boldSystemFont(ofSize: 18), range: NSRange.init(location: 0, length: String(item!.priceForOneCrown).characters.count))
         
         if item!.bestPrice {
             let paragraphStyle = NSMutableParagraphStyle()
@@ -95,9 +95,9 @@ class PriceCell: UITableViewCell {
     }
     
     private func priceForAllAttributedString(_ str: String) -> NSMutableAttributedString {
-        let returnedAttributedString = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText", size: 16.0)])
+        let returnedAttributedString = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText", size: 16.0) ?? UIFont.systemFont(ofSize: 16)])
         
-        returnedAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText", size: 12.0), range: NSRange.init(location: returnedAttributedString.length - 1, length: 1))
+        returnedAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText", size: 12.0) ?? UIFont.systemFont(ofSize: 12), range: NSRange.init(location: returnedAttributedString.length - 1, length: 1))
         
         return returnedAttributedString
     }
