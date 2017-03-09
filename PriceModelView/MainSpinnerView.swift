@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainSpinnerView: CircleView {
+class MainSpinnerView: UIView {
     
     lazy var spinnerLayer = CAShapeLayer()
     
