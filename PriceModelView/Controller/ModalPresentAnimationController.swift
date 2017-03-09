@@ -38,7 +38,7 @@ class ModalPresentAnimationController: NSObject, UIViewControllerAnimatedTransit
         blurView.alpha = 0
         container.addSubview(blurView)
         
-        // add to vc view
+        // add tovc view
         var finalFrame = transitionContext.finalFrame(for: toVC)
         finalFrame = CGRect(x: 0, y: 0, width: finalFrame.width - ModalViewParams.marginLeft * 2, height: finalFrame.height - ModalViewParams.marginTop - ModalViewParams.marginLeft)
         finalFrame = finalFrame.offsetBy(dx: ModalViewParams.marginLeft, dy: ModalViewParams.marginTop)

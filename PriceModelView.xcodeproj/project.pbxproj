@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		612CFCD21E7030CD005177D4 /* MainSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CFCD11E7030CD005177D4 /* MainSpinnerView.swift */; };
+		612CFD041E704953005177D4 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CFD031E704953005177D4 /* CircleView.swift */; };
 		6178AF5E1E6E9AD6002597C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6178AF5D1E6E9AD6002597C1 /* AppDelegate.swift */; };
 		6178AF631E6E9AD6002597C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178AF611E6E9AD6002597C1 /* Main.storyboard */; };
 		6178AF651E6E9AD6002597C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6178AF641E6E9AD6002597C1 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		612CFCD11E7030CD005177D4 /* MainSpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSpinnerView.swift; sourceTree = "<group>"; };
+		612CFD031E704953005177D4 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		6178AF5A1E6E9AD6002597C1 /* PriceModelView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceModelView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6178AF5D1E6E9AD6002597C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6178AF621E6E9AD6002597C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +80,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		612CFCCC1E7023E8005177D4 /* Modal Transition Animation */ = {
+			isa = PBXGroup;
+			children = (
+				61C7C28E1E6F0129005E86EA /* ModalPresentAnimationController.swift */,
+				61C7C2901E6F0398005E86EA /* ModalShowAnimationTransitioningDelegate.swift */,
+				619CCD131E6F232600F060BD /* ModalDismissAnimationController.swift */,
+			);
+			name = "Modal Transition Animation";
+			sourceTree = "<group>";
+		};
+		612CFD071E7066C2005177D4 /* PriceVC */ = {
+			isa = PBXGroup;
+			children = (
+				61C7C27E1E6EBDC0005E86EA /* PriceViewController.swift */,
+				61C7C2801E6EBED3005E86EA /* PriceDataProvider.swift */,
+				61C7C2821E6EC787005E86EA /* PriceCell.swift */,
+				612CFCD11E7030CD005177D4 /* MainSpinnerView.swift */,
+			);
+			name = PriceVC;
+			sourceTree = "<group>";
+		};
+		612CFD081E7066EB005177D4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				61C7C28A1E6EFB2D005E86EA /* PriceBuyButton.swift */,
+				612CFD031E704953005177D4 /* CircleView.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		6178AF511E6E9AD6002597C1 = {
 			isa = PBXGroup;
 			children = (
@@ -100,13 +134,9 @@
 				6178AF611E6E9AD6002597C1 /* Main.storyboard */,
 				6178AF7D1E6E9C36002597C1 /* Supporting files */,
 				61C7C27C1E6EBD87005E86EA /* Model */,
-				61C7C27E1E6EBDC0005E86EA /* PriceViewController.swift */,
-				61C7C2801E6EBED3005E86EA /* PriceDataProvider.swift */,
-				61C7C2821E6EC787005E86EA /* PriceCell.swift */,
-				61C7C28A1E6EFB2D005E86EA /* PriceBuyButton.swift */,
-				61C7C28E1E6F0129005E86EA /* ModalPresentAnimationController.swift */,
-				61C7C2901E6F0398005E86EA /* ModalShowAnimationTransitioningDelegate.swift */,
-				619CCD131E6F232600F060BD /* ModalDismissAnimationController.swift */,
+				612CFCCC1E7023E8005177D4 /* Modal Transition Animation */,
+				612CFD071E7066C2005177D4 /* PriceVC */,
+				612CFD081E7066EB005177D4 /* Common */,
 			);
 			path = PriceModelView;
 			sourceTree = "<group>";
@@ -200,7 +230,8 @@
 				TargetAttributes = {
 					6178AF591E6E9AD6002597C1 = {
 						CreatedOnToolsVersion = 8.3;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = HH6C6ZGFAB;
+						ProvisioningStyle = Automatic;
 					};
 					6178AF6D1E6E9AD6002597C1 = {
 						CreatedOnToolsVersion = 8.3;
@@ -254,12 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				612CFD041E704953005177D4 /* CircleView.swift in Sources */,
 				61C7C28B1E6EFB2D005E86EA /* PriceBuyButton.swift in Sources */,
 				619CCD141E6F232600F060BD /* ModalDismissAnimationController.swift in Sources */,
 				61C7C27B1E6EBC60005E86EA /* PriceManager.swift in Sources */,
 				61C7C2911E6F0398005E86EA /* ModalShowAnimationTransitioningDelegate.swift in Sources */,
 				61C7C28F1E6F0129005E86EA /* ModalPresentAnimationController.swift in Sources */,
 				61C7C2831E6EC787005E86EA /* PriceCell.swift in Sources */,
+				612CFCD21E7030CD005177D4 /* MainSpinnerView.swift in Sources */,
 				61C7C2811E6EBED3005E86EA /* PriceDataProvider.swift in Sources */,
 				61C7C2771E6EAACB005E86EA /* PriceItem.swift in Sources */,
 				61C7C27F1E6EBDC0005E86EA /* PriceViewController.swift in Sources */,
@@ -405,7 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HH6C6ZGFAB;
 				INFOPLIST_FILE = PriceModelView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IR.PriceModelView;
@@ -420,7 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HH6C6ZGFAB;
 				INFOPLIST_FILE = PriceModelView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IR.PriceModelView;

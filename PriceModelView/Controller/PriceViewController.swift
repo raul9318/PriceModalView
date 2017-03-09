@@ -11,7 +11,23 @@ import UIKit
 class PriceViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerMainSpinnerView: MainSpinnerView!
+    @IBOutlet weak var headerCircleSubView: CircleView!
+    
     @IBOutlet var priceDataPrivider: PriceDataProvider!
+    
+    @IBOutlet weak var headerCrown1: UIImageView!
+    @IBOutlet weak var headerCrown2: UIImageView!
+    @IBOutlet weak var headerCrown3: UIImageView!
+    @IBOutlet weak var headerCrown4: UIImageView!
+    @IBOutlet weak var headerCrown5: UIImageView!
+    
+    @IBOutlet weak var headerCrown6: UIImageView!
+    @IBOutlet weak var headerCrown7: UIImageView!
+    @IBOutlet weak var headerCrown8: UIImageView!
+    @IBOutlet weak var headerCrown9: UIImageView!
+    @IBOutlet weak var headerCrown10: UIImageView!
+    
     
     var priceManager: PriceManager! {
         didSet {
@@ -37,9 +53,33 @@ class PriceViewController: UIViewController {
         tableView.delegate = priceDataPrivider
         
         transitioningDelegate = modalShowAnimationTransitioningDelegate
+        
+        rotateHeaderCrowns()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        headerMainSpinnerView.addSpinner(withDuration: 1)
     }
     
     @IBAction func dismissAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func rotateHeaderCrowns() {
+        let base = M_PI / 180
+        
+        headerCrown1.transform = CGAffineTransform(rotationAngle: CGFloat(-45 * base))
+        headerCrown2.transform = CGAffineTransform(rotationAngle: CGFloat(-21 * base))
+        headerCrown3.transform = CGAffineTransform(rotationAngle: CGFloat(263 * base))
+        headerCrown4.transform = CGAffineTransform(rotationAngle: CGFloat(-87 * base))
+        headerCrown5.transform = CGAffineTransform(rotationAngle: CGFloat(240 * base))
+        
+        headerCrown6.transform = CGAffineTransform(rotationAngle: CGFloat(45 * base))
+        headerCrown7.transform = CGAffineTransform(rotationAngle: CGFloat(34 * base))
+        headerCrown8.transform = CGAffineTransform(rotationAngle: CGFloat(87 * base))
+        headerCrown9.transform = CGAffineTransform(rotationAngle: CGFloat((135-21) * base))
+        headerCrown10.transform = CGAffineTransform(rotationAngle: CGFloat((90 - 122) * base))
     }
 }

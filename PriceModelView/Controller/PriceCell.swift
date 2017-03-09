@@ -32,6 +32,7 @@ class PriceCell: UITableViewCell {
         }
         
         priceForOneLabel.attributedText = priceForOneAttributedString(priceForOneString)
+        
         crownCountLabel.text = String(item.countCrowns)
         titleLabel.text = item.title
         priceForAllLabel.attributedText =  priceForAllAttributedString("\(item.priceForAllCrown)\(rubleCharacter)")
@@ -44,17 +45,29 @@ class PriceCell: UITableViewCell {
         }
         
         if item.bestPrice {
-            setupBestPrice()
+            setupBestPriceLabel()
+        } else {
+            setupDefaultPriceLabel()
         }
     }
     
-    private func setupBestPrice() {
+    private func setupDefaultPriceLabel() {
+        priceForOneLabel.backgroundColor = UIColor.clear
+        priceForOneLabel.textColor = UIColor(colorLiteralRed: 47/255, green: 149/255, blue: 1.0, alpha: 1.0)
+        priceForOneLabel.frame = CGRect(origin: priceForOneLabel.frame.origin, size: CGSize(width: priceForOneLabel.frame.width, height: 22.0))
+        priceForOneLabel.translatesAutoresizingMaskIntoConstraints = true
+        
+        priceForOneLabel.layer.cornerRadius = 0
+        priceForOneLabel.layer.masksToBounds = false
+    }
+    
+    private func setupBestPriceLabel() {
         priceForOneLabel.backgroundColor = bestBackgroundColor
         
         priceForOneLabel.textAlignment = .center
         priceForOneLabel.textColor = UIColor.white
         
-        let newRect = CGRect(origin: priceForOneLabel.frame.origin, size: CGSize(width: priceForOneLabel.frame.width, height: priceForOneLabel.frame.height + 15))
+        let newRect = CGRect(origin: priceForOneLabel.frame.origin, size: CGSize(width: priceForOneLabel.frame.width, height: 40.0))
         
         
         priceForOneLabel.frame = newRect
@@ -73,6 +86,7 @@ class PriceCell: UITableViewCell {
         if item!.bestPrice {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineHeightMultiple = 0.8
+            paragraphStyle.alignment = .center
             
             returnedAttributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange.init(location: 0, length: returnedAttributedString.length))
         }
