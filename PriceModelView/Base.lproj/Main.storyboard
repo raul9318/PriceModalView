@@ -93,6 +93,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TU-qw-PL6" customClass="MainSpinnerView" customModule="PriceModelView" customModuleProvider="target">
                                         <rect key="frame" x="128" y="7" width="94" height="94"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerSpinner" translatesAutoresizingMaskIntoConstraints="NO" id="DCq-z8-YF9">
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8R-JM-lNX">
                                                 <rect key="frame" x="12" y="12" width="70" height="70"/>
                                                 <subviews>
@@ -134,9 +137,13 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="q8R-JM-lNX" firstAttribute="centerX" secondItem="6TU-qw-PL6" secondAttribute="centerX" id="7SF-lM-gqd"/>
+                                            <constraint firstAttribute="trailing" secondItem="DCq-z8-YF9" secondAttribute="trailing" id="8NG-8p-Fox"/>
                                             <constraint firstItem="q8R-JM-lNX" firstAttribute="height" secondItem="6TU-qw-PL6" secondAttribute="height" multiplier="35:47" id="BfZ-cz-CeG"/>
                                             <constraint firstAttribute="width" secondItem="6TU-qw-PL6" secondAttribute="height" multiplier="1:1" id="SKZ-z6-wg1"/>
+                                            <constraint firstAttribute="bottom" secondItem="DCq-z8-YF9" secondAttribute="bottom" id="Zfr-Em-o8e"/>
                                             <constraint firstItem="q8R-JM-lNX" firstAttribute="centerY" secondItem="6TU-qw-PL6" secondAttribute="centerY" id="eHs-9S-k95"/>
+                                            <constraint firstItem="DCq-z8-YF9" firstAttribute="top" secondItem="6TU-qw-PL6" secondAttribute="top" id="lUh-vD-E3O"/>
+                                            <constraint firstItem="DCq-z8-YF9" firstAttribute="leading" secondItem="6TU-qw-PL6" secondAttribute="leading" id="oZs-c1-vnR"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallCrown" translatesAutoresizingMaskIntoConstraints="NO" id="wR3-b8-3d3">
@@ -469,6 +476,7 @@
     <resources>
         <image name="Bitmap" width="371" height="484"/>
         <image name="bigCrown" width="75" height="63"/>
+        <image name="headerSpinner" width="96" height="96"/>
         <image name="menu" width="22" height="22"/>
         <image name="priceHeader" width="351" height="129"/>
         <image name="smallCrown" width="26" height="24"/>

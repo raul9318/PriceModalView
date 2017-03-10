@@ -2,18 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "headerCircle.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "headerCircle-1.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "headerCircle-2.png",
-      "scale" : "3x"
+      "filename" : "headerSpinner.pdf"
     }
   ],
   "info" : {

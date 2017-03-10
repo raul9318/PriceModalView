@@ -68,11 +68,12 @@ class PriceViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        headerMainSpinnerView.addSpinner(withDuration: 1)
+        headerMainSpinnerView.animate(1)
     }
     
     override func viewWillLayoutSubviews() {
         setupCirclesViews()
+        headerMainSpinnerView.addSpinner()
     }
     
     @IBAction func dismissAction(_ sender: UIButton) {
