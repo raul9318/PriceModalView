@@ -9,7 +9,7 @@
 import UIKit
 
 struct ModalViewParams {
-    static let marginTop: CGFloat = 76
+    static let marginTop: CGFloat = ModalView.topMargin()
     static let marginLeft: CGFloat = 12
 }
 

@@ -16,10 +16,23 @@ class PriceCell: UITableViewCell {
     @IBOutlet weak var priceForAllLabel: UILabel!
     @IBOutlet weak var buyButton: UIButton!
     
+    @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
+    
+    
     private let rubleCharacter: Character = "₽"
     private let bestBackgroundColor = UIColor(red: 47/255, green: 149/255, blue: 1.0, alpha: 1.0)
     
     var item: PriceItem?
+    
+    var priceForOneLabelDefaulFontPointSize: CGFloat!
+    var priceForAllLabelDefaulFontPointSize: CGFloat!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        priceForOneLabelDefaulFontPointSize = priceForOneLabel.font!.pointSize * FontScale.getScaleValue()
+        priceForAllLabelDefaulFontPointSize = priceForAllLabel.font!.pointSize * FontScale.getScaleValue()
+    }
     
     func configCell() {
         guard let item = item else {
@@ -37,6 +50,7 @@ class PriceCell: UITableViewCell {
         titleLabel.text = item.title
         priceForAllLabel.attributedText =  priceForAllAttributedString("\(item.priceForAllCrown)\(rubleCharacter)")
     }
+
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -55,7 +69,7 @@ class PriceCell: UITableViewCell {
         priceForOneLabel.backgroundColor = UIColor.clear
         priceForOneLabel.textColor = UIColor(colorLiteralRed: 47/255, green: 149/255, blue: 1.0, alpha: 1.0)
         priceForOneLabel.frame = CGRect(origin: priceForOneLabel.frame.origin, size: CGSize(width: priceForOneLabel.frame.width, height: 22.0))
-        priceForOneLabel.translatesAutoresizingMaskIntoConstraints = true
+        priceForOneLabel.translatesAutoresizingMaskIntoConstraints = false
         
         priceForOneLabel.layer.cornerRadius = 0
         priceForOneLabel.layer.masksToBounds = false
@@ -69,7 +83,6 @@ class PriceCell: UITableViewCell {
         
         let newRect = CGRect(origin: priceForOneLabel.frame.origin, size: CGSize(width: priceForOneLabel.frame.width, height: 40.0))
         
-        
         priceForOneLabel.frame = newRect
         priceForOneLabel.translatesAutoresizingMaskIntoConstraints = true
         
@@ -79,9 +92,9 @@ class PriceCell: UITableViewCell {
     
     private func priceForOneAttributedString(_ str: String) -> NSMutableAttributedString {
         
-        let returnedAttributedString = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText-Semibold", size: 13.0) ?? UIFont.boldSystemFont(ofSize: 13)])
+        let returnedAttributedString = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText-Semibold", size: priceForOneLabelDefaulFontPointSize) ?? UIFont.boldSystemFont(ofSize: priceForOneLabelDefaulFontPointSize)])
         
-        returnedAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText-Semibold", size: 18.0) ?? UIFont.boldSystemFont(ofSize: 18), range: NSRange.init(location: 0, length: String(item!.priceForOneCrown).characters.count))
+        returnedAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText-Semibold", size: priceForOneLabelDefaulFontPointSize + 5 * FontScale.getScaleValue()) ?? UIFont.boldSystemFont(ofSize: priceForOneLabelDefaulFontPointSize + 5 * FontScale.getScaleValue()), range: NSRange.init(location: 0, length: String(item!.priceForOneCrown).characters.count))
         
         if item!.bestPrice {
             let paragraphStyle = NSMutableParagraphStyle()
@@ -95,9 +108,9 @@ class PriceCell: UITableViewCell {
     }
     
     private func priceForAllAttributedString(_ str: String) -> NSMutableAttributedString {
-        let returnedAttributedString = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText", size: 16.0) ?? UIFont.systemFont(ofSize: 16)])
+        let returnedAttributedString = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont(name: ".SFUIText", size: priceForAllLabelDefaulFontPointSize + 4 * FontScale.getScaleValue()) ?? UIFont.systemFont(ofSize: priceForAllLabelDefaulFontPointSize + 4 * FontScale.getScaleValue())])
         
-        returnedAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText", size: 12.0) ?? UIFont.systemFont(ofSize: 12), range: NSRange.init(location: returnedAttributedString.length - 1, length: 1))
+        returnedAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFUIText", size: priceForAllLabelDefaulFontPointSize) ?? UIFont.systemFont(ofSize: priceForAllLabelDefaulFontPointSize), range: NSRange.init(location: returnedAttributedString.length - 1, length: 1))
         
         return returnedAttributedString
     }

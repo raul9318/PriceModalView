@@ -35,12 +35,13 @@ class PriceDataProvider: NSObject, UITableViewDataSource {
 
 extension PriceDataProvider: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         let priceItem = priceManager.itemFor(index: indexPath.row)
         
         guard !priceItem.bestPrice else {
-            return 110
+            return 100 + BestCellRowHeight.plusPT()
         }
-        return 90
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

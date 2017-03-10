@@ -12,7 +12,7 @@ class PriceViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerMainSpinnerView: MainSpinnerView!
-    @IBOutlet weak var headerCircleSubView: CircleView!
+    @IBOutlet weak var headerCircleSubView: UIView!
     
     @IBOutlet var priceDataPrivider: PriceDataProvider!
     
@@ -28,6 +28,7 @@ class PriceViewController: UIViewController {
     @IBOutlet weak var headerCrown9: UIImageView!
     @IBOutlet weak var headerCrown10: UIImageView!
     
+    @IBOutlet weak var headerImageView: UIImageView!
     
     var priceManager: PriceManager! {
         didSet {
@@ -56,6 +57,13 @@ class PriceViewController: UIViewController {
         
         rotateHeaderCrowns()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.estimatedRowHeight = 50
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -63,8 +71,20 @@ class PriceViewController: UIViewController {
         headerMainSpinnerView.addSpinner(withDuration: 1)
     }
     
+    override func viewWillLayoutSubviews() {
+        setupCirclesViews()
+    }
+    
     @IBAction func dismissAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func setupCirclesViews() {
+        headerMainSpinnerView.layer.cornerRadius = headerMainSpinnerView.frame.height / 2
+        headerMainSpinnerView.layer.masksToBounds = true
+        
+        headerCircleSubView.layer.cornerRadius = headerCircleSubView.frame.height / 2
+        headerCircleSubView.layer.masksToBounds = true
     }
     
     private func rotateHeaderCrowns() {
