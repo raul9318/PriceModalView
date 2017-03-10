@@ -56,6 +56,13 @@ class PriceViewController: UIViewController {
         
         rotateHeaderCrowns()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.estimatedRowHeight = 50
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
