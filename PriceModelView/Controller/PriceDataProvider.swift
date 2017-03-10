@@ -23,7 +23,7 @@ class PriceDataProvider: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell2", for: indexPath) as! PriceCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath) as! PriceCell
         let priceItem = priceManager.itemFor(index: indexPath.row)
         
         cell.item = priceItem
@@ -35,14 +35,13 @@ class PriceDataProvider: NSObject, UITableViewDataSource {
 
 extension PriceDataProvider: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
         
         let priceItem = priceManager.itemFor(index: indexPath.row)
         
         guard !priceItem.bestPrice else {
-            return 110
+            return 100 + BestCellRowHeight.plusPT()
         }
-        return 90
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

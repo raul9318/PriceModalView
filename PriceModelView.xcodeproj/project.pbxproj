@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		612CFCD21E7030CD005177D4 /* MainSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CFCD11E7030CD005177D4 /* MainSpinnerView.swift */; };
-		612CFD041E704953005177D4 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CFD031E704953005177D4 /* CircleView.swift */; };
 		6178AF5E1E6E9AD6002597C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6178AF5D1E6E9AD6002597C1 /* AppDelegate.swift */; };
 		6178AF631E6E9AD6002597C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178AF611E6E9AD6002597C1 /* Main.storyboard */; };
 		6178AF651E6E9AD6002597C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6178AF641E6E9AD6002597C1 /* Assets.xcassets */; };
 		6178AF681E6E9AD6002597C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178AF661E6E9AD6002597C1 /* LaunchScreen.storyboard */; };
 		619CCD141E6F232600F060BD /* ModalDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619CCD131E6F232600F060BD /* ModalDismissAnimationController.swift */; };
+		61A997D51E72D8D600949719 /* ScaleInterfaceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A997D41E72D8D600949719 /* ScaleInterfaceHelper.swift */; };
 		61C7C2751E6EAAB0005E86EA /* PriceItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C2741E6EAAB0005E86EA /* PriceItemTests.swift */; };
 		61C7C2771E6EAACB005E86EA /* PriceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C2761E6EAACB005E86EA /* PriceItem.swift */; };
 		61C7C2791E6EBC11005E86EA /* PriceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7C2781E6EBC11005E86EA /* PriceManagerTests.swift */; };
@@ -39,7 +39,6 @@
 
 /* Begin PBXFileReference section */
 		612CFCD11E7030CD005177D4 /* MainSpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSpinnerView.swift; sourceTree = "<group>"; };
-		612CFD031E704953005177D4 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		6178AF5A1E6E9AD6002597C1 /* PriceModelView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceModelView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6178AF5D1E6E9AD6002597C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6178AF621E6E9AD6002597C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		6178AF6E1E6E9AD6002597C1 /* PriceModelViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceModelViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6178AF741E6E9AD6002597C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		619CCD131E6F232600F060BD /* ModalDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModalDismissAnimationController.swift; path = Controller/ModalDismissAnimationController.swift; sourceTree = "<group>"; };
+		61A997D41E72D8D600949719 /* ScaleInterfaceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleInterfaceHelper.swift; sourceTree = "<group>"; };
 		61C7C2741E6EAAB0005E86EA /* PriceItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceItemTests.swift; path = Model/PriceItemTests.swift; sourceTree = "<group>"; };
 		61C7C2761E6EAACB005E86EA /* PriceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceItem.swift; path = Model/PriceItem.swift; sourceTree = "<group>"; };
 		61C7C2781E6EBC11005E86EA /* PriceManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceManagerTests.swift; path = Model/PriceManagerTests.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				61C7C28A1E6EFB2D005E86EA /* PriceBuyButton.swift */,
-				612CFD031E704953005177D4 /* CircleView.swift */,
+				61A997D41E72D8D600949719 /* ScaleInterfaceHelper.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -285,7 +285,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				612CFD041E704953005177D4 /* CircleView.swift in Sources */,
 				61C7C28B1E6EFB2D005E86EA /* PriceBuyButton.swift in Sources */,
 				619CCD141E6F232600F060BD /* ModalDismissAnimationController.swift in Sources */,
 				61C7C27B1E6EBC60005E86EA /* PriceManager.swift in Sources */,
@@ -296,6 +295,7 @@
 				61C7C2811E6EBED3005E86EA /* PriceDataProvider.swift in Sources */,
 				61C7C2771E6EAACB005E86EA /* PriceItem.swift in Sources */,
 				61C7C27F1E6EBDC0005E86EA /* PriceViewController.swift in Sources */,
+				61A997D51E72D8D600949719 /* ScaleInterfaceHelper.swift in Sources */,
 				6178AF5E1E6E9AD6002597C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

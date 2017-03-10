@@ -28,6 +28,7 @@ class PriceViewController: UIViewController {
     @IBOutlet weak var headerCrown9: UIImageView!
     @IBOutlet weak var headerCrown10: UIImageView!
     
+    @IBOutlet weak var headerImageView: UIImageView!
     
     var priceManager: PriceManager! {
         didSet {
